@@ -173,12 +173,28 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbt-Dt-I5F">
                                 <rect key="frame" x="433" y="169" width="37" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="PPe-30-YOk"/>
+                                    <constraint firstAttribute="height" constant="30" id="bgz-NG-Vwc"/>
                                     <constraint firstAttribute="height" constant="30" id="eDW-k9-mcZ"/>
                                     <constraint firstAttribute="width" constant="37" id="zLt-jG-diF"/>
                                 </constraints>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PPe-30-YOk"/>
+                                        <exclude reference="bgz-NG-Vwc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="PPe-30-YOk"/>
+                                        <include reference="bgz-NG-Vwc"/>
+                                        <exclude reference="eDW-k9-mcZ"/>
+                                        <exclude reference="zLt-jG-diF"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="onPressedUpdateDog:" destination="Iyy-aM-B6A" eventType="touchUpInside" id="7tc-XP-Tav"/>
                                 </connections>
@@ -189,12 +205,28 @@
                             <constraint firstItem="lbt-Dt-I5F" firstAttribute="top" secondItem="Aq4-Ma-ixv" secondAttribute="bottom" constant="149" id="7fR-DY-0Ar"/>
                             <constraint firstItem="Slm-2W-S66" firstAttribute="top" secondItem="0hX-8l-gmo" secondAttribute="bottom" constant="19" id="BTb-fh-sAq"/>
                             <constraint firstItem="lbt-Dt-I5F" firstAttribute="leading" secondItem="Slm-2W-S66" secondAttribute="trailing" constant="33" id="Eg2-17-b86"/>
+                            <constraint firstAttribute="centerX" secondItem="lbt-Dt-I5F" secondAttribute="centerX" id="KUG-xm-3vq"/>
                             <constraint firstItem="nWd-Qa-Gqa" firstAttribute="top" secondItem="Slm-2W-S66" secondAttribute="bottom" constant="21" id="TYF-fC-2JL"/>
                             <constraint firstItem="0hX-8l-gmo" firstAttribute="top" secondItem="Aq4-Ma-ixv" secondAttribute="bottom" constant="100" id="gTD-in-wYE"/>
+                            <constraint firstAttribute="centerY" secondItem="lbt-Dt-I5F" secondAttribute="centerY" id="jEA-ia-FTG"/>
                             <constraint firstAttribute="centerX" secondItem="Slm-2W-S66" secondAttribute="centerX" id="mgS-Cc-hCo"/>
                             <constraint firstAttribute="centerX" secondItem="0hX-8l-gmo" secondAttribute="centerX" id="qL0-XS-ODC"/>
                             <constraint firstAttribute="centerX" secondItem="nWd-Qa-Gqa" secondAttribute="centerX" id="xto-6e-lta"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KUG-xm-3vq"/>
+                                <exclude reference="jEA-ia-FTG"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="7fR-DY-0Ar"/>
+                                <exclude reference="Eg2-17-b86"/>
+                                <include reference="KUG-xm-3vq"/>
+                                <include reference="jEA-ia-FTG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2Oq-fa-Xnu"/>
                     <connections>
