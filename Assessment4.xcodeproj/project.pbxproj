@@ -11,6 +11,7 @@
 		35463BB71A7BF74E00FE9B1E /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 35463BB61A7BF74E00FE9B1E /* Dog.m */; };
 		35463BC11A7BF7E800FE9B1E /* PersonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35463BC01A7BF7E800FE9B1E /* PersonParser.m */; };
 		35463BC31A7C001800FE9B1E /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 35463BC21A7C001800FE9B1E /* people.json */; };
+		35463BCA1A7C247200FE9B1E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35463BC91A7C247200FE9B1E /* WebViewController.m */; };
 		93CD77B11999604D00D27E0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CD77B01999604D00D27E0A /* Foundation.framework */; };
 		93CD77B31999604D00D27E0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CD77B21999604D00D27E0A /* CoreGraphics.framework */; };
 		93CD77B51999604D00D27E0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CD77B41999604D00D27E0A /* UIKit.framework */; };
@@ -48,6 +49,8 @@
 		35463BBF1A7BF7E800FE9B1E /* PersonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonParser.h; sourceTree = "<group>"; };
 		35463BC01A7BF7E800FE9B1E /* PersonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonParser.m; sourceTree = "<group>"; };
 		35463BC21A7C001800FE9B1E /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		35463BC81A7C247200FE9B1E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		35463BC91A7C247200FE9B1E /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		93CD77AD1999604D00D27E0A /* Assessment4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assessment4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CD77B01999604D00D27E0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93CD77B21999604D00D27E0A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,7 @@
 		35463BBB1A7BF78100FE9B1E /* Dog */ = {
 			isa = PBXGroup;
 			children = (
+				35463BC71A7C244800FE9B1E /* Web */,
 				93CD77E5199962E900D27E0A /* DogsViewController.h */,
 				93CD77E6199962E900D27E0A /* DogsViewController.m */,
 				93CD77E81999642A00D27E0A /* AddDogViewController.h */,
@@ -164,6 +168,15 @@
 				93CD77C01999604D00D27E0A /* AppDelegate.m */,
 			);
 			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		35463BC71A7C244800FE9B1E /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				35463BC81A7C247200FE9B1E /* WebViewController.h */,
+				35463BC91A7C247200FE9B1E /* WebViewController.m */,
+			);
+			name = Web;
 			sourceTree = "<group>";
 		};
 		93CD77A41999604D00D27E0A = {
@@ -338,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93CD77C71999604D00D27E0A /* ViewController.m in Sources */,
+				35463BCA1A7C247200FE9B1E /* WebViewController.m in Sources */,
 				93CD77C11999604D00D27E0A /* AppDelegate.m in Sources */,
 				35463BB71A7BF74E00FE9B1E /* Dog.m in Sources */,
 				35463BB41A7BF74E00FE9B1E /* Person.m in Sources */,

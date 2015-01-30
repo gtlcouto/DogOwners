@@ -111,16 +111,18 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    AddDogViewController * vc = segue.destinationViewController;
-    vc.context = self.context;
+
 
     if ([segue.identifier isEqualToString: @"AddDogSegue"])
     {
+        AddDogViewController * vc = segue.destinationViewController;
+        vc.context = self.context;
         vc.selectedPerson = self.selectedPerson;
     }
-    else
+    else if ([segue.identifier isEqualToString: @"toEditSegue"])
     {
-        //vc.selectedPerson = self.selectedPerson;
+        AddDogViewController * vc = segue.destinationViewController;
+        vc.context = self.context;
         vc.selectedDog = [self.dogsArray objectAtIndex:[self.dogsTableView indexPathForSelectedRow].row];
     }
 }
