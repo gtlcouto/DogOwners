@@ -36,11 +36,6 @@
     [self loadPeople];
     self.title = @"Dog Owners";
 
-    NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"myColor"];
-    UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
-
-    self.navigationController.navigationBar.tintColor = color;
-
 }
 
 #pragma mark - UITableView Delegate Methods

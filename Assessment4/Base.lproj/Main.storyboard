@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -173,10 +174,10 @@
                                 <exclude reference="RSd-ZO-vx1"/>
                                 <exclude reference="lNq-8y-Yog"/>
                                 <exclude reference="qcE-IJ-meE"/>
+                                <exclude reference="ZhC-n7-X1S"/>
                                 <exclude reference="Dce-k9-knp"/>
                                 <exclude reference="K89-Y8-oPC"/>
                                 <exclude reference="MzM-OC-7CS"/>
-                                <exclude reference="ZhC-n7-X1S"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -189,12 +190,12 @@
                                 <include reference="RSd-ZO-vx1"/>
                                 <include reference="lNq-8y-Yog"/>
                                 <include reference="qcE-IJ-meE"/>
-                                <exclude reference="qjo-A4-Eya"/>
+                                <exclude reference="Utc-UA-QE1"/>
+                                <include reference="ZhC-n7-X1S"/>
                                 <include reference="Dce-k9-knp"/>
                                 <include reference="K89-Y8-oPC"/>
                                 <include reference="MzM-OC-7CS"/>
-                                <exclude reference="Utc-UA-QE1"/>
-                                <include reference="ZhC-n7-X1S"/>
+                                <exclude reference="qjo-A4-Eya"/>
                             </mask>
                         </variation>
                     </view>
@@ -222,6 +223,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZET-yP-8ap"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KSv-H5-iQR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlC-4x-vXM">
@@ -247,12 +249,12 @@
                                 <exclude reference="ClO-zI-IHi"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="YyR-f6-IPk"/>
+                                <exclude reference="fUF-d1-zWm"/>
+                                <exclude reference="fbt-LH-jvI"/>
                                 <exclude reference="075-Nh-CDC"/>
                                 <exclude reference="5pX-bz-toC"/>
                                 <exclude reference="ajI-MO-YLI"/>
-                                <exclude reference="fUF-d1-zWm"/>
-                                <exclude reference="fbt-LH-jvI"/>
-                                <exclude reference="YyR-f6-IPk"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -261,12 +263,12 @@
                                 <include reference="ClO-zI-IHi"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="YyR-f6-IPk"/>
+                                <include reference="fUF-d1-zWm"/>
+                                <include reference="fbt-LH-jvI"/>
                                 <include reference="075-Nh-CDC"/>
                                 <include reference="5pX-bz-toC"/>
                                 <include reference="ajI-MO-YLI"/>
-                                <include reference="fUF-d1-zWm"/>
-                                <include reference="fbt-LH-jvI"/>
-                                <include reference="YyR-f6-IPk"/>
                             </mask>
                         </variation>
                     </view>

@@ -29,6 +29,8 @@
 
     NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"myColor"];
     UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+
+    [[UINavigationBar appearance] setTintColor:color];
     
 
     return YES;
