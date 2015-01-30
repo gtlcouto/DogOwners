@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35463BB41A7BF74E00FE9B1E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 35463BB31A7BF74E00FE9B1E /* Person.m */; };
+		35463BB71A7BF74E00FE9B1E /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 35463BB61A7BF74E00FE9B1E /* Dog.m */; };
+		35463BC11A7BF7E800FE9B1E /* PersonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35463BC01A7BF7E800FE9B1E /* PersonParser.m */; };
+		35463BC31A7C001800FE9B1E /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 35463BC21A7C001800FE9B1E /* people.json */; };
 		93CD77B11999604D00D27E0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CD77B01999604D00D27E0A /* Foundation.framework */; };
 		93CD77B31999604D00D27E0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CD77B21999604D00D27E0A /* CoreGraphics.framework */; };
 		93CD77B51999604D00D27E0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CD77B41999604D00D27E0A /* UIKit.framework */; };
@@ -37,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35463BB21A7BF74E00FE9B1E /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		35463BB31A7BF74E00FE9B1E /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		35463BB51A7BF74E00FE9B1E /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		35463BB61A7BF74E00FE9B1E /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		35463BBF1A7BF7E800FE9B1E /* PersonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonParser.h; sourceTree = "<group>"; };
+		35463BC01A7BF7E800FE9B1E /* PersonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonParser.m; sourceTree = "<group>"; };
+		35463BC21A7C001800FE9B1E /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		93CD77AD1999604D00D27E0A /* Assessment4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assessment4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CD77B01999604D00D27E0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93CD77B21999604D00D27E0A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +98,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35463BB81A7BF75600FE9B1E /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				93CD77EB199964A100D27E0A /* Model.xcdatamodeld */,
+				35463BBC1A7BF78F00FE9B1E /* Dog */,
+				35463BBD1A7BF79400FE9B1E /* Person */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		35463BB91A7BF76C00FE9B1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35463BBA1A7BF77900FE9B1E /* Person */,
+				35463BBB1A7BF78100FE9B1E /* Dog */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		35463BBA1A7BF77900FE9B1E /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				93CD77C51999604D00D27E0A /* ViewController.h */,
+				93CD77C61999604D00D27E0A /* ViewController.m */,
+			);
+			name = Person;
+			sourceTree = "<group>";
+		};
+		35463BBB1A7BF78100FE9B1E /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				93CD77E5199962E900D27E0A /* DogsViewController.h */,
+				93CD77E6199962E900D27E0A /* DogsViewController.m */,
+				93CD77E81999642A00D27E0A /* AddDogViewController.h */,
+				93CD77E91999642A00D27E0A /* AddDogViewController.m */,
+			);
+			name = Dog;
+			sourceTree = "<group>";
+		};
+		35463BBC1A7BF78F00FE9B1E /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				35463BB51A7BF74E00FE9B1E /* Dog.h */,
+				35463BB61A7BF74E00FE9B1E /* Dog.m */,
+			);
+			name = Dog;
+			sourceTree = "<group>";
+		};
+		35463BBD1A7BF79400FE9B1E /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				35463BB21A7BF74E00FE9B1E /* Person.h */,
+				35463BB31A7BF74E00FE9B1E /* Person.m */,
+				35463BBF1A7BF7E800FE9B1E /* PersonParser.h */,
+				35463BC01A7BF7E800FE9B1E /* PersonParser.m */,
+			);
+			name = Person;
+			sourceTree = "<group>";
+		};
+		35463BBE1A7BF7AC00FE9B1E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				93CD77BF1999604D00D27E0A /* AppDelegate.h */,
+				93CD77C01999604D00D27E0A /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 		93CD77A41999604D00D27E0A = {
 			isa = PBXGroup;
 			children = (
@@ -120,17 +199,11 @@
 		93CD77B61999604D00D27E0A /* Assessment4 */ = {
 			isa = PBXGroup;
 			children = (
-				93CD77BF1999604D00D27E0A /* AppDelegate.h */,
-				93CD77C01999604D00D27E0A /* AppDelegate.m */,
+				35463BBE1A7BF7AC00FE9B1E /* AppDelegate */,
 				93CD77C21999604D00D27E0A /* Main.storyboard */,
-				93CD77C51999604D00D27E0A /* ViewController.h */,
-				93CD77C61999604D00D27E0A /* ViewController.m */,
-				93CD77E5199962E900D27E0A /* DogsViewController.h */,
-				93CD77E6199962E900D27E0A /* DogsViewController.m */,
-				93CD77E81999642A00D27E0A /* AddDogViewController.h */,
-				93CD77E91999642A00D27E0A /* AddDogViewController.m */,
 				93CD77C81999604D00D27E0A /* Images.xcassets */,
-				93CD77EB199964A100D27E0A /* Model.xcdatamodeld */,
+				35463BB91A7BF76C00FE9B1E /* View */,
+				35463BB81A7BF75600FE9B1E /* Data Model */,
 				93CD77B71999604D00D27E0A /* Supporting Files */,
 			);
 			path = Assessment4;
@@ -139,6 +212,7 @@
 		93CD77B71999604D00D27E0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35463BC21A7C001800FE9B1E /* people.json */,
 				93CD77B81999604D00D27E0A /* Assessment4-Info.plist */,
 				93CD77B91999604D00D27E0A /* InfoPlist.strings */,
 				93CD77BC1999604D00D27E0A /* main.m */,
@@ -241,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35463BC31A7C001800FE9B1E /* people.json in Resources */,
 				93CD77C91999604D00D27E0A /* Images.xcassets in Resources */,
 				93CD77BB1999604D00D27E0A /* InfoPlist.strings in Resources */,
 				93CD77C41999604D00D27E0A /* Main.storyboard in Resources */,
@@ -264,8 +339,11 @@
 			files = (
 				93CD77C71999604D00D27E0A /* ViewController.m in Sources */,
 				93CD77C11999604D00D27E0A /* AppDelegate.m in Sources */,
+				35463BB71A7BF74E00FE9B1E /* Dog.m in Sources */,
+				35463BB41A7BF74E00FE9B1E /* Person.m in Sources */,
 				93CD77BD1999604D00D27E0A /* main.m in Sources */,
 				93CD77EA1999642A00D27E0A /* AddDogViewController.m in Sources */,
+				35463BC11A7BF7E800FE9B1E /* PersonParser.m in Sources */,
 				93CD77E7199962E900D27E0A /* DogsViewController.m in Sources */,
 				93CD77ED199964A100D27E0A /* Model.xcdatamodeld in Sources */,
 			);
@@ -472,6 +550,7 @@
 				93CD77E11999604D00D27E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93CD77E21999604D00D27E0A /* Build configuration list for PBXNativeTarget "Assessment4Tests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +559,7 @@
 				93CD77E41999604D00D27E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

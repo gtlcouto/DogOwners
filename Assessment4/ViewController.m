@@ -7,6 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "Person.h"
+#import "PersonParser.h"
+#import "AppDelegate.h"
+#import "DogsViewController.h"
+
+#define kColorKey @"myColor"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
@@ -14,6 +20,9 @@
 
 @property UIAlertView *addAlert;
 @property UIAlertView *colorAlert;
+@property NSMutableArray * peopleArray;
+@property NSManagedObjectContext * context;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,21 +31,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.peopleArray = [NSMutableArray new];
+    self.context = [AppDelegate appDelegate].managedObjectContext;
+    [self loadPeople];
     self.title = @"Dog Owners";
+
+    NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"myColor"];
+    UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+
+    self.navigationController.navigationBar.tintColor = color;
+
 }
 
 #pragma mark - UITableView Delegate Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //TODO: UPDATE THIS ACCORDINGLY
-    return 1;
+    return self.peopleArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"myCell"];
-    //TODO: UPDATE THIS ACCORDINGLY
+    Person * thisPerson = self.peopleArray[indexPath.row];
+    cell.textLabel.text = thisPerson.name;
     return cell;
 }
 
@@ -44,26 +62,39 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //TODO: SAVE USER'S DEFAULT COLOR PREFERENCE USING THE CONDITIONAL BELOW
-
+    UIColor * color = [UIColor new];
     if (buttonIndex == 0)
     {
-        self.navigationController.navigationBar.tintColor = [UIColor purpleColor];
+        color = [UIColor purpleColor];
+        self.navigationController.navigationBar.tintColor = color;
+        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+        [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:kColorKey];
     }
     else if (buttonIndex == 1)
     {
-        self.navigationController.navigationBar.tintColor = [UIColor blueColor];
+        color = [UIColor blueColor];
+        self.navigationController.navigationBar.tintColor = color;
+        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+        [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:kColorKey];
     }
     else if (buttonIndex == 2)
     {
-        self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
+        color = [UIColor orangeColor];
+        self.navigationController.navigationBar.tintColor = color;
+        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+        [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:kColorKey];
     }
     else if (buttonIndex == 3)
     {
-        self.navigationController.navigationBar.tintColor = [UIColor greenColor];
+        color = [UIColor greenColor];
+        self.navigationController.navigationBar.tintColor = color;
+        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+        [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:kColorKey];
     }
 
 }
+
+#pragma mark - IBActions Methods
 
 //METHOD FOR PRESENTING USER'S COLOR PREFERENCE
 - (IBAction)onColorButtonTapped:(UIBarButtonItem *)sender
@@ -75,6 +106,29 @@
                                           otherButtonTitles:@"Purple", @"Blue", @"Orange", @"Green", nil];
     self.colorAlert.tag = 1;
     [self.colorAlert show];
+}
+
+#pragma mark - Helper methods
+- (void)loadPeople
+{
+
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:[Person description]];
+    self.peopleArray =  [[self.context executeFetchRequest:request error:nil] mutableCopy];
+    [self.tableView reloadData];
+
+    if ( self.peopleArray.count == 0)
+    {
+        [PersonParser loadJsonData];
+    }
+    
+}
+
+#pragma mark - Segue methods
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DogsViewController * vc = segue.destinationViewController;
+    vc.context = self.context;
+    vc.selectedIndex = [self.tableView indexPathForSelectedRow].row;
 }
 
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface DogsViewController : UIViewController
+
+@property NSManagedObjectContext * context;
+@property NSInteger selectedIndex;
+
 
 @end

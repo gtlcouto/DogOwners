@@ -15,11 +15,21 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
++ (instancetype)appDelegate
+{
+    return [[UIApplication sharedApplication]delegate];
+
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ViewController *controller = (ViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+
+    NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"myColor"];
+    UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+    
 
     return YES;
 }
